@@ -24,7 +24,7 @@ body{
     display: flex;
 }
 
-.contorls > input {
+.controls > input {
     width: 75%;
 }
 
