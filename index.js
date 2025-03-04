@@ -1,30 +1,45 @@
-const frames = [   
+const fishes = [   
     "><(((('>",
-    " ><(((('>",
-    "  ><(((('>",
-    "   ><(((('>",
-    "    ><(((('>",
-    "     ><(((('>",
-    "      ><(((('>",
-    `
-    ~~~~~~~~~~~~~~~~~~~~~
-    ~        ><(((('>    ~
-    ~   ><(((('>         ~
-    ~~~~~~~~~~~~~~~~~~~~~
-    `,
-    `
-    ~~~~~~~~~~~~~~~~~~~~~
-    ~   ><(((('>         ~
-    ~        ><(((('>    ~
-    ~~~~~~~~~~~~~~~~~~~~~
-    `
+    "><((('>",
+    "><(())>",
+    "><(((0>",
+    "><(()'>",
+    "><((()*>",
+    "><(()(°>",
+    "><(())°>--"
 ];
 
-let index = 0;
-function animateAquarium(){ 
-    document.querySelector("#aquarium").innerText = frames[index]; // Ändert den Text im <div>
-    index = (index + 1) % frames.length; // Nimmt das nächste Frame (wieder von vorne, wenn am Ende)
-    setTimeout(animateAquarium, 300); // Ruft sich selbst nach 200ms erneut auf
-}
+const aquarium = document.querySelector("#aquarium");
 
-animateAquarium();
+
+// Creates Fish at a random Postition
+function createFish(){
+    const fish = document.createElement("div");
+    fish.classList.add("fish");
+    fish.innerText = fishes[Math.floor(Math.random() * fishes.length)];
+
+    fish.style.top = Math.random() * window.innerHeight + "px";
+    fish.style.left = -50 + "px"; // Starts left
+
+    aquarium.appendChild(fish);
+    animateFish(fish);
+};
+
+// Function: moves Fish from right to left
+
+function animateFish(fish){
+    let speed = Math.random() * 3 + 1; // random speed
+    let position = -50; // Starts left
+
+function move(){
+    position += speed;
+    fish.style.left = position + "px";
+
+    if(position > window.innerWidth) {
+        fish.remove();
+    }else{
+        requestAnimationFrame(move);
+    }
+}
+move();
+};
