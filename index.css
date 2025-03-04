@@ -4,33 +4,26 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #191919;
-}
-
-.container {
-    position: absolute;
-    top: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-#canvas1{
-    border: .3125rem solid #e9e9e9;
-
-}
-
-.controls{
+    color: turquoise;
+    font-family: monospace;
+    white-space: pre; /* WICHTIG für ASCII */
+    text-align: center;
     display: flex;
+    text-align: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 20px;
+    font-size: 16px;
 }
 
-.controls > input {
-    width: 75%;
-}
-
-.controls > label {
-    border: .3125rem solid #e9e9e9;;
-    width: 25%;
-    color: white;
-    font-size: 1rem;
+#aquarium {
+    font-size: 20px;
+    width: 100vw;
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
