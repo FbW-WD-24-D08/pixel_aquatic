@@ -1,38 +1,42 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #161635;
-    color: turquoise;
-    font-family: monospace;
-    white-space: pre; /*WICHTIG für ASCII*/
-    text-align: center;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-top: 20px;
-    font-size: 16px;
+  background-color: #161635;
+  color: turquoise;
+  font-family: monospace;
+  white-space: pre; /*WICHTIG für ASCII*/
+  text-align: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 20px;
+  font-size: 16px;
 }
 
 #aquarium {
-    font-size: 12px;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    white-space: pre;
-    color: lightgray; /* Hintergrundfarbe der ASCII-Kunst */
+  font-size: 12px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  white-space: pre;
+  color: lightgray; /* Hintergrundfarbe der ASCII-Kunst */
 }
 
 .fish {
-    position: absolute;
-    font-size: 20px;
-    color: turquoise;
-} 
+  position: absolute;
+  font-size: 20px;
+  color: turquoise;
+}
+
+.lobster {
+  position: absolute;
+}
