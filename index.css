@@ -27,7 +27,7 @@ body {
     flex-direction: column;
     position: absolute;
     white-space: pre;
-    color: darkgreen; /* Hintergrundfarbe der ASCII-Kunst */
+    color: #305051; /* Hintergrundfarbe der ASCII-Kunst */
 }
 
 .fish {
