@@ -1,15 +1,23 @@
 const fishes = [   
     "><(((('>",
     "><((('>",
-    "><(())}°>",
+    "><(())°>",
     "><(((0>",
     "><(()'>",
     "><((()*>",
     "><(()(°>",
-    "><(())°--",
+    "><(())°>--",
+//     `
+//     |\
+//     |  \
+// |\ /    .\
+// | |       (
+// |/ \     /
+//     |  /
+//     |/ `
 ];
-const lobster = [    '\n                            ,.---.   \n               ,,,,     /    _ `.\n                \\\\   /      \\  )\n                 |||| //`-.__/\n                 :::::/_\n {{`-.__.-\'(`(^^(^^^(^ 9 `.=========\'\n{{{{{{ { ( ( (  (   (-----:=\n {{.-\'~~\'-.(,(,,(,,,(__6_.=========.\n                 ::::/ \n                 |||| /  ,-\'/\\\n                 ///  \\ _/  )\n               \'\'\'\'     \\  `   /\n                         ---\'\'\n    '];
-const kraken = [`
+const lobsters = [    '\n                            ,.---.   \n               ,,,,     /    _ `.\n                \\\\   /      \\  )\n                 |||| //`-.__/\n                 :::::/_\n {{`-.__.-\'(`(^^(^^^(^ 9 `.=========\'\n{{{{{{ { ( ( (  (   (-----:=\n {{.-\'~~\'-.(,(,,(,,,(__6_.=========.\n                 ::::/ \n                 |||| /  ,-\'/\\\n                 ///  \\ _/  )\n               \'\'\'\'     \\  `   /\n                         ---\'\'\n    '];
+const krakens = [`
     _                      _______                      _
  _dMMMb._              .adOOOOOOOOOba.              _,dMMMb_
 dP'  ~YMMb            dOOOOOOOOOOOOOOOb            aMMP~  'Yb
@@ -48,7 +56,7 @@ function createFish(){
     animateFish(fish);
 };
 
-// Function: moves Fish from right to left
+// Function: moves Fish from left to right
 
 function animateFish(fish){
     let speed = Math.random() * 3 + 1; // random speed
@@ -69,3 +77,36 @@ function animateFish(fish){
 
 // Creates a new Fish ervery second
 setInterval(createFish, 1000);
+
+
+function createLobster(){
+    const lobster = document.createElement("div");
+    lobster.classList.add("lobster");
+    lobster.innerText = lobsters[Math.floor(Math.random() * lobsters.length)];
+
+    lobster.style.top = Math.random() * window.innerHeight + "px";
+    lobster.style.left = -50 + "px"; // Starts left also
+
+    document.body.appendChild(lobster);
+    console.log("Neuer Hummer erstellt", lobster.innerText, lobster.style.top);
+    animateLobster(lobster);
+};
+
+function animateLobster(lobster){
+    let speed = Math.random() * 3 + 1;
+    let position = -50;
+
+    function move(){
+        position += speed;
+        lobster.style.left = position + "px";
+
+        if(position > window.innerWidth){
+            lobster.remove();
+        }else{
+            requestAnimationFrame(move);
+        }
+    }
+    move();
+};
+
+setInterval(createLobster, 3000);
