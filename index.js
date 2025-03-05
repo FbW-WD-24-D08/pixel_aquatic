@@ -109,4 +109,4 @@ function animateLobster(lobster){
     move();
 };
 
-setInterval(createLobster, 8000);
+setInterval(createLobster, 16000);
