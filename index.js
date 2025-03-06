@@ -6,6 +6,11 @@ const fishes = [
     "><(()'>",
     "><((()*>",
     "><(()(°>",
+    "><(()(^>",
+    "><(()(°>--"
+];
+
+const flop = [
 `⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⣀⣠⣄⡀⣀⣠⣼⣶⣦⣤⣄⣦⣄⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⢀⣴⣶⣶⡿⣶⡶⠢⣼⡷⣾⠿⢿⡛⠿⣯⣍⠓⢬⡙⠢⡙⢦⡙⠣⡙⠫⣿⢟⠢⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⢰⠢⢤⡀⠀⠈⠛⢯⡷⢬⡓⠬⡓⢤⡙⠢⣍⠲⢌⡓⢤⣙⣷⣦⣾⡷⠾⠷⠾⠷⠾⢷⣮⣦⣵⣮⡳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -32,52 +37,58 @@ const fishes = [
 ⠈⠁⠀⠀⠀⠀⢸⣟⢿⣣⣕⠄⡀⠀⠀⢀⣀⣀⣤⣤⣤⠤⠤⠤⠴⠛⠋⠁⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣵⣥⠦⠏⠉⠉⠀⣠⣾⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠸⡛⠻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-`,
-// `⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣴⠶⠟⠛⣻⣿⣥⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠿⠋⠉⠉⡨⠋⠀⠀⠀⠚⠉⠁⠀⢈⣽⡿⠟⠲⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣄⣠⡿⠃⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⡾⠛⠛⠛⠁⠀⠀⠸⠀⠀⠀⠀⠀⠀⣠⢰⠀⣰⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⠛⢹⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⡿⠷⣆⠀⡀⠀⠀⠀⠀⡆⠀⢸⠀⢀⣠⣿⣧⣴⣿⣤⣤⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⠀⣰⣿⢻⠀⠀⠸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣟⠁⠀⠘⣆⠘⡆⠀⠀⢀⣇⣤⣿⡟⠛⠉⠉⠀⢠⠖⠛⠳⢮⡉⠉⠛⢶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⢠⣿⠁⠸⡇⠀⠀⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡿⠯⣄⠀⠀⠀⠈⢦⢸⣤⡶⠟⢩⠟⠉⠉⠀⠀⠀⠀⠀⠀⡔⣾⣀⠁⠀⠀⠀⠈⠻⣦⡀⠀⠀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⣾⠻⠀⠀⠀⠀⠀⠸⣧⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⠟⠳⠤⣀⠀⠀⢀⣠⣾⠟⠃⠀⠀⠹⣄⠀⠀⠀⠀⠀⠀⠀⣠⡿⠿⢿⣄⠀⠀⠀⠀⠀⠈⢻⣆⠀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⢻⡆⠀⠀⠀⠀⢀⣀⣴⣿⠁⢠⡀⠀⠀⣀⣴⠟⠁⢻⡀⠀⠀⣠⠞⠋⠁⠀⠀⠀⠀⠀⢸⡏⠀⠀⠀⠹⡇⠀⠀⠀⠀⠀⠀⠹⣆⢀⣤⣤⣄
-// ⠀⠀⠀⠀⠀⠀⢻⡇⠀⠀⠀⠀⠀⠀⠀⢿⡀⠀⠀⠀⠈⠀⠉⠛⢷⣾⣿⣶⢾⠟⠁⠀⠀⡴⠛⠀⠀⣏⠀⠀⠀⠀⠀⠀⠀⠀⢺⣷⣶⣦⠀⢠⡇⠀⠀⠀⠀⠀⠀⠀⠹⡟⠁⠀⣿
-// ⠀⠀⠀⠀⠀⠀⢻⣿⣄⠀⠀⠀⠀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⣀⣤⡿⠛⠁⠘⣧⣀⠀⢸⡃⠀⠀⠀⠙⣷⡤⠀⠀⠀⠀⠀⠀⠐⣿⡿⠿⣦⡾⠃⠀⠀⠀⠀⠀⠀⠀⢀⡇⢀⣾⡟
-// ⠀⠀⠀⠀⠀⠀⢀⣿⡿⣿⣦⡀⠀⣀⠀⠀⣿⣤⣤⣤⣴⣶⠟⠋⠙⣇⠀⠀⢠⡞⠉⠀⠈⢳⣤⡀⠀⡞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣤⣼⣷⣿⣧⡀
-// ⠀⠀⠀⠀⢀⣴⣿⣅⠀⠀⠀⠠⠴⣻⡿⢿⡏⠈⣯⡀⠀⣹⡦⠀⠀⣼⠗⠀⢸⡄⠀⠀⠀⣼⠁⠀⠀⢻⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠇⠈⣿⡈⢉⣿
-// ⠀⠀⠀⠀⣹⣿⣏⣠⠀⠀⠀⠀⠞⠁⠀⣸⡿⣶⡏⠀⠀⣯⡀⠀⠀⣧⠀⠀⠀⢹⡦⠀⠀⢹⣆⠀⠀⠀⣹⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡟⠛⠛⠋
-// ⠀⠀⢀⣴⠟⠋⠁⠀⠀⠀⠀⠀⢀⣠⣾⠋⠀⠈⠻⣶⣄⢸⡟⠀⠀⠈⡷⠂⠀⢼⠀⠀⠀⠀⢈⡟⠀⠀⢻⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⠟⠀⠀⠀⠀
-// ⠒⠺⠿⣷⣤⣄⣀⣀⣠⣤⣴⠾⠟⠋⠀⠀⠀⠀⠀⠀⠙⠿⣷⣦⠀⠀⣇⠀⠀⠘⢷⣤⠄⠀⢸⡄⠀⠀⠀⠉⢻⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡾⠃⠀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⡀⠀⢀⣽⡿⠿⣿⣿⡆⠀⠘⣇⠀⠀⠀⠉⠓⣾⢀⣠⡾⠿⢿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣟⠉⠀⠀⡀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣡⣴⣴⡿⠛⠛⠷⢶⣬⣿⣶⡀⠀⢀⣾⣿⠟⠒⢶⠀⠙⣷⣄⡀⠀⠀⢀⣀⣠⣴⠾⠛⠉⢻⣶⣴⠞⠁⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠉⠀⠀⠀⠀⠀⢠⡏⠉⠛⣻⡿⠁⠁⠀⢀⡞⠀⠀⣼⠟⠛⠛⠛⠉⠙⠻⠷⣦⣽⣶⡾⠟⠁⠀⠀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣷⣤⣾⠏⠀⡀⠀⠀⡀⠀⢀⣾⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣬⣿⣷⣶⣾⣧⣴⣾⣤⡶⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`
-];
+`];
+
 const lobsters = [    '\n                            ,.---.   \n               ,,,,     /    _ `.\n                \\\\   /      \\  )\n                 |||| //`-.__/\n                 :::::/_\n {{`-.__.-\'(`(^^(^^^(^ 9 `.=========\'\n{{{{{{ { ( ( (  (   (-----:=\n {{.-\'~~\'-.(,(,,(,,,(__6_.=========.\n                 ::::/ \n                 |||| /  ,-\'/\\\n                 ///  \\ _/  )\n               \'\'\'\'     \\  `   /\n                         ---\'\'\n    '];
 
-const krakens = [`
-    _                      _______                      _
- _dMMMb._              .adOOOOOOOOOba.              _,dMMMb_
-dP'  ~YMMb            dOOOOOOOOOOOOOOOb            aMMP~  'Yb
-V      ~"Mb          dOOOOOOOOOOOOOOOOOb          dM"~      V
-         'Mb.       dOOOOOOOOOOOOOOOOOOOb       ,dM'
-          'YMb._   |OOOOOOOOOOOOOOOOOOOOO|   _,dMP'
-     __     'YMMM| OP'~"YOOOOOOOOOOOP"~'YO |MMMP'     __
-   ,dMMMb.     ~~' OO     'YOOOOOP'     OO '~~     ,dMMMb.
-_,dP~  'YMba_      OOb      'OOO'      dOO      _aMMP'  ~Yb._
-            'YMMMM\`OOOo     OOO     oOOO'/MMMMP'
-    ,aa.     '~YMMb 'OOOb._,dOOOb._,dOOO'dMMP~'       ,aa.
-  ,dMYYMba._         'OOOOOOOOOOOOOOOOO'          _,adMYYMb.
- ,MP'   'YMMba._      OOOOOOOOOOOOOOOOO       _,adMMP'   'YM.
- MP'        ~YMMMba._ YOOOOPVVVVVYOOOOP  _,adMMMMP~       'YM
- YMb           ~YMMMM\`OOOOI''''''IOOOOO'/MMMMP~           dMP
-  'Mb.           'YMMMb'OOOI,,,,,IOOOO'dMMMP'           ,dM'
-    ''                  'OObNNNNNdOO'                   ''
-                          '~OOOOO~'
-   `
-];
+const krakens = [`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⡿⠿⢿⣿⣷⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⣷⣠⣴⣶⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠻⢿⡄⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿⣟⠉⢹⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⠿⠿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠀⣰⣿⣿⡟⠁⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠈⢿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣴⣾⣿⣿⣿⣿⣶⡀⢀⣾⣿⣿⠋⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠹⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢸⣿⡁⠀⠀⢀⣿⣿⢇⣾⣿⣿⠃⠀⠀⠀⠀⠀⠀⣿⡈⠙⢿⣿⣿⣿⠿⠋⢩⡇⠀⠀⠀⠀⠀⠀⠙⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀
+⠈⠛⠛⣠⣴⣿⡿⠋⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⣿⣿⣶⣾⣿⣿⣿⣷⣶⣿⡇⠀⠀⠀⠀⠀⠀⠀⣻⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣠⣾⣿⡿⠋⠀⠀⢻⣿⣿⣷⡀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⢠⣿⣿⣏⣠⣤⣶⣤⠀⠀⠀⠀
+⢰⣿⣿⣟⠀⠀⠀⠀⠘⢿⣿⣿⣿⣷⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⣤⣴⣿⣿⣿⣿⠋⠀⠀⠀⠀⠀⠀⠀
+⢸⣿⣿⣿⣦⣄⣀⠀⠀⠀⠉⠙⠛⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠉⢻⣿⣄⠀⠀⠀⠀⠀⠀⠀
+⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠈⢿⣿⣶⣄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⠉⠉⠙⠛⠛⠛⠛⠛⣿⣿⣿⣿⠟⢋⣿⣿⣿⡿⠋⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠙⢿⣿⣧⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⠟⠁⠀⣿⣿⣿⠟⠀⠀⢀⣿⣿⣿⡿⢿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠈⢿⣿⣷⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠏⠀⠀⢸⣿⣿⣿⠀⠀⠀⢸⣿⣿⣿⠀⠈⢻⣿⣿⣿⢿⣿⣿⣦⡀⠀⠀⠀⣸⣿⣿⠀⣀⡄
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⡟⠀⠀⠀⠸⣿⣿⣿⠀⠀⠀⢻⣿⣿⣿⠀⠀⠀⢻⣿⣿⡆⠹⢿⣿⣿⣶⣶⣾⣿⣿⣿⣿⠋⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⡿⠁⠀⠀⠀⠀⢿⣿⣿⡆⠀⠀⠸⣿⣿⣿⡄⠀⠀⠀⢿⣿⣿⠀⠀⠙⠛⠿⠿⠿⠛⠋⢸⣿⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⣴⣿⣿⡿⠛⠁⠀⠀⠀⠀⠀⠘⣿⣿⣿⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀
+⠀⠀⠀⢠⣶⣿⣿⠿⠋⠁⠒⠛⢻⣷⠀⠀⠀⠀⠀⢹⣿⣿⡇⠀⣠⣿⣿⣿⢃⣴⣿⠟⠛⢿⣿⣿⡄⠀⠀⠀⠀⠀⠀⢠⣿⣿⠀⠀
+⠀⠀⢰⣿⣿⠟⠁⠀⠀⠀⠀⢀⣾⡟⠀⠀⠀⠀⠀⠘⣿⣿⣧⣾⣿⣿⠟⠁⣾⣿⡇⠀⠀⠘⢿⣿⣿⣦⡀⠀⠀⣀⣴⣿⣿⠃⠀⠀
+⠀⠀⣿⣿⡇⠀⠀⢀⡄⠀⢠⣿⣿⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⠟⠁⠀⠀⢿⣿⣇⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀
+⠀⠀⠹⣿⣷⣄⣀⣼⡇⠀⢸⣿⣿⡀⠀⠀⠀⠀⣠⣿⣿⣿⡿⠋⠀⠀⠀⠀⢸⣿⣿⡀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠈⠛⠛⠛⠋⠀⠀⠀⢻⣿⣿⣶⣶⣶⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠛⠛⠛⠉⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣷⣄⣀⠀⢀⣀⣴⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`];
+
+const entons = [`⠀⠀⠀⠀⠀⠀⠀⠀⣤⡀⠀⣶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣆⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠸⣷⣮⣿⣿⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⡠⠒⠉⠀⠀⠀⠀⠀⠀⠈⠁⠲⢖⠒⡀⠀⠀
+⠀⠀⠀⡠⠴⣏⠀⢀⡀⠀⢀⡀⠀⠀⠀⡀⠀⠀⡀⠱⡈⢄⠀
+⠀⠀⢠⠁⠀⢸⠐⠁⠀⠄⠀⢸⠀⠀⢎⠀⠂⠀⠈⡄⢡⠀⢣
+⠀⢀⠂⠀⠀⢸⠈⠢⠤⠤⠐⢁⠄⠒⠢⢁⣂⡐⠊⠀⡄⠀⠸
+⠀⡘⠀⠀⠀⢸⠀⢠⠐⠒⠈⠀⠀⠀⠀⠀⠀⠈⢆⠜⠀⠀⢸
+⠀⡇⠀⠀⠀⠀⡗⢺⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⡄⢀⠎
+⠀⢃⠀⠀⠀⢀⠃⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠷⡃⠀
+⠀⠈⠢⣤⠀⠈⠀⠀⠑⠠⠤⣀⣀⣀⣀⣀⡀⠤⠒⠁⠀⢡⠀
+⡀⣀⠀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⠀
+⠑⢄⠉⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠀
+⠀⠀⠑⠢⢱⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠁⠀
+⠀⠀⠀⠀⢀⠠⠓⠢⠤⣀⣀⡀⠀⠀⣀⣀⡀⠤⠒⠑⢄⠀⠀
+⠀⠀⠀⠰⠥⠤⢄⢀⡠⠄⡈⡀⠀⠀⣇⣀⠠⢄⠀⠒⠤⠣⠀
+⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀`];
 
 const aquarium = document.querySelector("#aquarium");
 
@@ -119,6 +130,9 @@ function animateFish(fish){
 setInterval(createFish, 1000);
 
 
+//--------------------------------------------------------------------------------------
+
+
 function createLobster(){
     const lobster = document.createElement("div");
     lobster.classList.add("lobster");
@@ -150,3 +164,115 @@ function animateLobster(lobster){
 };
 
 setInterval(createLobster, 16000);
+
+//--------------------------------------------------------------------------------------------------
+
+function createBob(){
+    const bob = document.createElement("div");
+    bob.classList.add("bob");
+    bob.innerText = flop[Math.floor(Math.random() * flop.length)];
+
+    bob.style.top = Math.random() * window.innerHeight + "px";
+    bob.style.left = -50 + "px"; // Starts left
+
+    document.body.appendChild(bob);
+    console.log("Noch ein neuer Fisch erstellt:", bob.innerText, bob.style.top);
+    animateBob(bob);
+};
+
+// Function: moves Fish from left to right
+
+function animateBob(bob){
+    let speed = Math.random() * 3 + 1; // random speed
+    let position = -50; // Starts left
+
+    function move(){
+        position += speed;
+        bob.style.left = position + "px";
+
+        if(position > window.innerWidth) {
+            bob.remove();
+        }else{
+            requestAnimationFrame(move);
+        }
+    }
+    move();
+};
+
+setInterval(createBob, 10000);
+//---------------------------------------------------------------------------------
+
+function createKraken(){
+    const kraken = document.createElement("div");
+    kraken.classList.add("kraken");
+    kraken.innerText = krakens[Math.floor(Math.random() * krakens.length)];
+
+    kraken.style.top = Math.random() * window.innerHeight + "px";
+    kraken.style.left = -100 + "px"; // Starts left
+
+    document.body.appendChild(kraken);
+    console.log("Hilfe, der Kraken:", kraken.innerText, kraken.style.top);
+    animateBob(kraken);
+};
+
+// Function: moves Fish from left to right
+
+function animateKraken(kraken){
+    let speed = Math.random() * 1 + 1; // random speed
+    let position = -100; // Starts left
+
+    function move(){
+        position += speed;
+        kraken.style.left = position + "px";
+
+        if(position > window.innerWidth) {
+            kraken.remove();
+        }else{
+            requestAnimationFrame(move);
+        }
+    }
+    move();
+};
+
+setInterval(createKraken, 20000);
+
+
+//-----------------------------------------------------------------------------------
+
+function createEnton(){
+    const enton = document.createElement("div");
+    enton.classList.add("enton");
+    enton.innerText = entons[Math.floor(Math.random() * entons.length)];
+
+    enton.style.top = Math.random() * window.innerHeight + "px";
+    enton.style.left = -50 + "px"; // Starts left
+
+    document.body.appendChild(enton);
+    console.log("Hilfe, Enton hat Kopfschmerzen. Dürfen Enten eigentlich Aspirin einnehmen?", enton.innerText, enton.style.top);
+    animateEnton(enton);
+};
+
+// Function: moves Fish from left to right
+
+function animateEnton(enton){
+    let speed = Math.random() * 0 + 1; // random speed
+    let position = -50; // Starts left
+
+    function move(){
+        position += speed;
+        enton.style.left = position + "px";
+
+        if(position > window.innerWidth) {
+            enton.remove();
+        }else{
+            requestAnimationFrame(move);
+        }
+    }
+    move();
+};
+
+setInterval(createEnton, 40000);
+
+//-------------------------------------------------------------------------------------------------------------------
+
+
