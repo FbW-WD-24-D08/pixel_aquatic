@@ -38,12 +38,13 @@ body {
 
 .lobster{
     position: absolute;
+    font-size: 12px;
     color: red;
 }
 
 .bob {
     position: absolute;
-    font-size: 10px;
+    font-size: 8px;
     color:mediumturquoise;
 }
 
@@ -51,9 +52,11 @@ body {
     position: absolute;
     color: rgba(128, 255, 0, 0.7);
     font-family: monospace;
+    font-size: 12px;
 }
 
 .enton{
     position: absolute;
     color: goldenrod;
+    font-size: 12px;
 }

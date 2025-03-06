@@ -147,7 +147,7 @@ function createLobster(){
 };
 
 function animateLobster(lobster){
-    let speed = Math.random() * 3 + 1;
+    let speed = Math.random() * 2 + 1;
     let position = -50;
 
     function move(){
@@ -218,7 +218,7 @@ function createKraken(){
 // Function: moves Fish from left to right
 
 function animateKraken(kraken){
-    let speed = Math.random() * 1 + 1; // random speed
+    let speed = Math.random() * 1 +  1; // random speed
     let position = -100; // Starts left
 
     function move(){
